@@ -6,6 +6,8 @@ p {
     margin: 0;
 }
 
+
+
 #main {
     display: flex;
     flex-direction: column;
@@ -28,6 +30,8 @@ body {
     align-items: center;
     position: relative;
     z-index: 5;
+    font-family: "Yu Gothic Medium", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-weight: 500;
 }
 
 .content1 {
@@ -36,6 +40,18 @@ body {
     justify-content: center;
     position: relative;
     z-index: 5;
+    font-family: "Yu Gothic Medium", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-weight: 500;
+}
+
+.content2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    font-family: "Yu Gothic Medium", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-weight: 500;
 }
 
 
@@ -94,6 +110,8 @@ body {
     font-size: 20px;
     font-weight: bold;
     transition: color 0.3s ease;
+    font-family: "Yu Gothic Medium", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-weight: 500;
 }
 
 .menu ul li a:hover {
@@ -186,8 +204,8 @@ body.menu-open .plus-btn .r2 {
 }
 
 .mainvisual {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 200px;
+    margin-bottom: 200px;
 }
 
 .mainvisual img {
@@ -221,14 +239,28 @@ body.menu-open .plus-btn .r2 {
 .content12ndtittle {
     display: flex;
     justify-content: center;
-    margin: 30px 0px 30px 0px;
+    margin: 0px 0px 30px 0px;
 }
 
 .content1subtittle {
     font-weight: bold;
-    margin: 30px 20px 15px 20px;
+    margin: 30px 20px 5px 20px;
 }
 
 .content1text {
-    margin: 15px 20px 30px 20px;
+    margin: 10px 20px 30px 20px;
+}
+
+.content2tittle {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px 30px 0px;
+}
+
+.content2text {
+    margin: 10px 20px 30px 20px;
+}
+
+.hrline {
+    margin: 20px 0px;
 }
