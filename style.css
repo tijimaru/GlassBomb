@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+p {
+    margin: 0;
+}
+
 #main {
     display: flex;
     flex-direction: column;
@@ -22,6 +26,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.content1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     z-index: 5;
 }
@@ -78,8 +90,14 @@ body {
 .menu ul li a {
     cursor: pointer;
     text-decoration: none;
-    color: #ffff00;
+    color: #ffffff;
     font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #ed083b;
 }
 
 .menu-sliders {
@@ -187,4 +205,30 @@ body.menu-open .plus-btn .r2 {
 .indextext1 {
     text-align: center;
     margin: 0px 20px;
+}
+
+.highlight {
+    color: #ed083b;
+    font-weight: bold;
+}
+
+.content1tittle {
+    display: flex;
+    margin: 50px 0px 0px 0px;
+    justify-content: center;
+}
+
+.content12ndtittle {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px 30px 0px;
+}
+
+.content1subtittle {
+    font-weight: bold;
+    margin: 30px 20px 15px 20px;
+}
+
+.content1text {
+    margin: 15px 20px 30px 20px;
 }
