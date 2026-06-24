@@ -4,8 +4,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100vw;
-    background: #f7f7f7;
+    /*width: 100vw;*/
+    background: #ffeded;
 }
 
 body {
@@ -14,6 +14,10 @@ body {
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     z-index: 5;
 }
@@ -30,6 +34,8 @@ body {
     height: 100vh;
     width: 100vw;
     pointer-events: none;
+    pointer-events: none;
+    /* これによりレイヤーの上からでもボタンが押せます */
 }
 
 .menu {
@@ -50,6 +56,10 @@ body {
     visibility: hidden;
 }
 
+.menu ul {
+    padding: 0;
+}
+
 .menu ul li {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
@@ -58,13 +68,14 @@ body {
     min-height: 45px;
     padding: 15px;
     text-align: center;
+    list-style: none;
 }
 
 .menu ul li a {
     cursor: pointer;
     text-decoration: none;
-    color: white;
-    font-size: 25px;
+    color: #ffff00;
+    font-size: 20px;
 }
 
 .menu-sliders {
@@ -82,7 +93,7 @@ body {
 
 .menu-sliders:nth-child(odd) {
     /* darken(dodgerblue, 20%) を通常のカラーコードに変換 */
-    background: #0060b3;
+    background: #fcb8bc;
 }
 
 .plus-btn-pos {
@@ -122,7 +133,7 @@ body {
 }
 
 .plus-btn:hover {
-    background: rgba(2, 89, 165, 1);
+    background: #ed083b;
 }
 
 .plus-btn:hover div {
@@ -159,7 +170,17 @@ body.menu-open .plus-btn .r2 {
 
 .mainvisual img {
     width: 100%;
-    height: 100%;
-    max-width: 800px;
-    max-height: 600px;
+    height: auto;
+    max-width: 200px;
+}
+
+.heartimage img {
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+}
+
+.indextext1 {
+    text-align: center;
+    margin: 0px 20px;
 }
