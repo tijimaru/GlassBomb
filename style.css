@@ -15,7 +15,7 @@ p {
     align-items: center;
     position: relative;
     /*width: 100vw;*/
-    background: #ffeded;
+    background: #F8FAFC;
 }
 
 body {
@@ -96,7 +96,6 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     font-size: 45px;
-    color: white;
     min-height: 45px;
     padding: 15px;
     text-align: center;
@@ -106,7 +105,7 @@ body {
 .menu ul li a {
     cursor: pointer;
     text-decoration: none;
-    color: #ffffff;
+    color: #1E293B;
     font-size: 20px;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -115,7 +114,7 @@ body {
 }
 
 .menu ul li a:hover {
-    color: #ed083b;
+    color: #BAE6FD;
 }
 
 .menu-sliders {
@@ -133,7 +132,7 @@ body {
 
 .menu-sliders:nth-child(odd) {
     /* darken(dodgerblue, 20%) を通常のカラーコードに変換 */
-    background: #fcb8bc;
+    background: #E0F2FE;
 }
 
 .plus-btn-pos {
@@ -173,7 +172,7 @@ body {
 }
 
 .plus-btn:hover {
-    background: #ed083b;
+    background: #BAE6FD;
 }
 
 .plus-btn:hover div {
@@ -204,7 +203,7 @@ body.menu-open .plus-btn .r2 {
 }
 
 .mainvisual {
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 200px;
 }
 
@@ -212,6 +211,10 @@ body.menu-open .plus-btn .r2 {
     width: 100%;
     height: auto;
     max-width: 200px;
+}
+
+.heartimage {
+    margin-bottom: 50px;
 }
 
 .heartimage img {
