@@ -204,7 +204,7 @@ body.menu-open .plus-btn .r2 {
 }
 
 .mainvisual {
-    margin-top: 200px;
+    margin-top: 100px;
     margin-bottom: 200px;
 }
 
@@ -228,6 +228,10 @@ body.menu-open .plus-btn .r2 {
 .highlight {
     color: #ed083b;
     font-weight: bold;
+}
+
+.contenttittle {
+    padding-top: 50px;
 }
 
 .content1tittle {
