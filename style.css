@@ -214,13 +214,25 @@ body.menu-open .plus-btn .r2 {
 }
 
 .heartimage {
-    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    /* 全体を中央揃え */
+    align-items: center;
+    gap: 20px;
+    /* 画像同士の間隔 */
+    width: 100%;
+    overflow: hidden;
+    /* はみ出し防止 */
+    box-sizing: border-box;
+    padding: 0 20px;
+    /* 画面端に余白 */
+    margin: 48px 0px 48px 0px;
 }
 
 .heartimage img {
-    width: 100%;
+    display: block;
+    max-width: 100%;
     height: auto;
-    max-width: 700px;
 }
 
 .indextext1 {
