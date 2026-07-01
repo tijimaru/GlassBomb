@@ -215,9 +215,7 @@ body.menu-open .plus-btn .r2 {
 
 .heartimage {
     display: flex;
-    justify-content: center;
-    /* 全体を中央揃え */
-    align-items: center;
+    flex-direction: column;
     gap: 20px;
     /* 画像同士の間隔 */
     width: 100%;
