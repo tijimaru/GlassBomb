@@ -1,283 +1,263 @@
-html {
-    scroll-behavior: smooth;
-}
-
-p {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
 }
 
 
 
-#main {
+header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    height: 70px;
+    padding: 0 30px;
     position: relative;
-    /*width: 100vw;*/
-    background: #F8FAFC;
 }
+
 
 body {
-    height: 100vh;
-    margin: 0;
+    padding: 0px 15px;
 }
 
-.content {
+/* ==========================================
+           2. ハンバーガーボタン (3本線)
+        ========================================== */
+.menu-btn {
+    width: 30px;
+    height: 22px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 5;
-    font-family: "Yu Gothic Medium", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    font-weight: 500;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    /* メニューが開いた時もボタンを最前面にする */
 }
 
-.content1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 5;
-    font-family: "Yu Gothic Medium", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    font-weight: 500;
+.menu-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.content2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 5;
-    font-family: "Yu Gothic Medium", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    font-weight: 500;
+/* 【追加】メニューが開いた時(active)は、線の色を白色（#fff）にする */
+.menu-btn.active span {
+    background-color: #fff;
 }
 
+/* ボタンがクリックされた時(active)の「X」の形状 */
+.menu-btn.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
 
-.menu-container {
-    z-index: 20;
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.menu-btn.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ==========================================
+           3. フルスクリーンメニュー本体
+        ========================================== */
+.nav-menu {
     position: fixed;
     top: 0;
-    left: 0;
-    display: flex;
-    align-items: stretch;
-    overflow: hidden;
+    right: -100%;
+    /* 初期状態は画面の右外に隠す */
+    width: 100%;
     height: 100vh;
-    width: 100vw;
-    pointer-events: none;
-    pointer-events: none;
-    /* これによりレイヤーの上からでもボタンが押せます */
-}
-
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    z-index: 30;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transform: translateY(-100%);
-    transition: transform 0.5s;
-    transition-delay: 0.5s;
-    visibility: hidden;
-}
-
-.menu ul {
-    padding: 0;
-}
-
-.menu ul li {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 100;
-    font-size: 45px;
-    min-height: 45px;
-    padding: 15px;
-    text-align: center;
+    background: rgba(17, 17, 17, 0.98);
+    backdrop-filter: blur(8px);
+    /* 背景を少しぼかす効果 */
     list-style: none;
-}
-
-.menu ul li a {
-    cursor: pointer;
-    text-decoration: none;
-    color: #1E293B;
-    font-size: 20px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    font-family: "Yu Gothic Medium", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    font-weight: 500;
-}
-
-.menu ul li a:hover {
-    color: #BAE6FD;
-}
-
-.menu-sliders {
-    flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: flex 0.45s;
+    transition: all 0.4s ease;
+    z-index: 90;
 }
 
-.menu-sliders:nth-child(2) {
-    flex: 1 0 100%;
-    background: transparent;
+/* メニューが開いた時(active) */
+.nav-menu.active {
+    right: 0;
+
+    /* 右外から画面ぴったりにスライドイン */
 }
 
-.menu-sliders:nth-child(odd) {
-    /* darken(dodgerblue, 20%) を通常のカラーコードに変換 */
-    background: #E0F2FE;
+.nav-menu li {
+    margin: 25px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
 }
 
-.plus-btn-pos {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 50;
+/* メニューが開いた後、文字をふわっと浮き上がらせる */
+.nav-menu.active li {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+    /* ボタンの動きより少し遅らせる */
 }
 
-.plus-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
-    background: white;
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+    font-family: "itc-bradley-hand-std",
+        sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.nav-menu a:hover {
+    color: #007BFF;
+    /* ホバー時に青色に変化 */
+}
+
+
+/*------------------*/
+
+.timeline-container {
     position: relative;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    cursor: pointer;
+    padding-left: 20px;
+    margin-top: 16px;
 }
 
-.plus-btn div {
+/* グレイ面に静かに馴染む極細縦線 */
+.timeline-container::before {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 16px;
-    height: 3px;
-    background: #333;
-    transition: transform 0.3s;
-    transition-delay: 0.5s;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background-color: #333;
 }
 
-.plus-btn .r1 {
-    transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+.timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+    padding-bottom: 4px;
 }
 
-.plus-btn .r2 {
-    transform: translateX(-50%) translateY(-50%) rotate(-180deg);
+.timeline-item:last-child {
+    margin-bottom: 0;
 }
 
-.plus-btn:hover {
-    background: #BAE6FD;
+/* タイムライン上のソリッドな白いドット */
+.timeline-dot {
+    position: absolute;
+    left: -23.5px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    /* 黒背景に映えるピュアホワイトの点 */
+    border-radius: 50%;
+    border: 2px solid #333;
+    ;
+    /* 背後の線をマスクするグレイの余白 */
+    z-index: 2;
 }
 
-.plus-btn:hover div {
-    background: white;
+.timeline-body h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
 }
 
-.plus-btn:active {
-    box-shadow: none;
+.timeline-body p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
 }
 
-/* メニューが開いたときの状態（bodyに .menu-open がついたとき） */
-body.menu-open .menu-sliders:nth-child(2) {
-    flex: 0 0 0%;
+.timeline-arrow {
+    display: none;
 }
 
-body.menu-open .menu {
-    transform: translateY(0%);
-    visibility: visible;
-    pointer-events: all;
+/*------------------*/
+
+/*font-family: "itc-bradley-hand-std",
+sans-serif;
+font-weight: 700;
+font-style: normal;
+
+font-family: "fot-tsukuardgothic-std",
+sans-serif;
+font-weight: 400or700;
+font-style: normal;
+*/
+
+
+.contenttittle h1 {
+    font-family: "itc-bradley-hand-std",
+        sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 100px;
+    padding-top: 500px;
 }
 
-body.menu-open .plus-btn .r1 {
-    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-}
-
-body.menu-open .plus-btn .r2 {
-    transform: translateX(-50%) translateY(-50%) rotate(-135deg);
-}
-
-.mainvisual {
-    margin-top: 150px;
-    margin-bottom: 200px;
+.content1tittle h1 {
+    font-family: "itc-bradley-hand-std",
+        sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 100px;
+    padding-top: 370px;
 }
 
 .mainvisual img {
     width: 100%;
     height: auto;
-    max-width: 200px;
-}
-
-.heartimage {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    /* 画像同士の間隔 */
-    width: 100%;
-    overflow: hidden;
-    /* はみ出し防止 */
-    box-sizing: border-box;
-    padding: 0 20px;
-    /* 画面端に余白 */
-    margin: 48px 0px 48px 0px;
-}
-
-.heartimage img {
     display: block;
-    max-width: 100%;
-    height: auto;
+    margin: 0 auto;
 }
 
-.indextext1 {
-    text-align: center;
-    margin: 0px 20px;
+.subtittle p {
+    font-family: "itc-bradley-hand-std",
+        sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    padding-top: 20px;
+
 }
 
-.highlight {
-    color: #ed083b;
-    font-weight: bold;
+.maintittle p {
+    font-family: "fot-tsukuardgothic-std",
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 55px;
+    line-height: 1.5;
 }
 
-.contenttittle {
-    padding-top: 50px;
+.text1 p {
+    font-family: "fot-tsukuardgothic-std",
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
 }
 
-.content1tittle {
-    display: flex;
-    margin: 50px 0px 0px 0px;
-    justify-content: center;
-}
-
-.content12ndtittle {
-    display: flex;
-    justify-content: center;
-    margin: 0px 0px 30px 0px;
-}
-
-.content1subtittle {
-    font-weight: bold;
-    margin: 30px 20px 5px 20px;
-}
-
-.content1text {
-    margin: 10px 20px 30px 20px;
-}
-
-.content2tittle {
-    display: flex;
-    justify-content: center;
-    margin: 100px 0px 30px 0px;
-}
-
-.content2text {
-    margin: 10px 20px 30px 20px;
-}
-
-.hrline {
-    margin: 20px 0px;
+.submainatittle p {
+    font-family: "fot-tsukuardgothic-std",
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
 }

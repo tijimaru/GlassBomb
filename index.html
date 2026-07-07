@@ -3,85 +3,86 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="move.js" defer></script>
-    <link rel="icon" href="">
-    <title>川崎病性冠動脈瘤について
-    </title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://use.typekit.net/vws2rvn.css">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'vws2rvn',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassBomb</title>
 </head>
 
-<body class="menu-open">
-    <main id="main">
-        <header>
-            <div class="plus-btn-pos">
-                <div class="plus-btn">
-                    <div class="r1"></div>
-                    <div class="r2"></div>
-                </div>
-            </div>
-        </header>
-        <div class="content">
-            <div class="mainvisual">
-                <a href="#coronary-aneurysm">
-                    <img src="images/mv.png" alt="Main Visual">
-                </a>
-            </div>
-            <div id="coronary-aneurysm">
+<body>
+    <header>
+        <button class="menu-btn" id="menuBtn" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-            </div>
-            <div class="contenttittle">
-                <h1>
-                    川崎病性冠動脈瘤
-                </h1>
-            </div>
-            <div class="indextext1">
-                <p>
-                    川崎病の影響で、心臓の血管(冠動脈)に炎症が起き、血管の壁が弱くなり<span class="highlight">冠動脈瘤</span>ができる。
-                    <br>
-                    瘤の部分の血管の血液の流れが滞ると血栓(血のかたまり)が発生し急性心筋梗塞を起こす可能性があるため、お薬や定期的な検査で管理しています
-                </p>
-                <div class="heartimage">
-                    <div>
-                        <img src="images/aset1.png" alt="">
-                    </div>
-                    <div>
-                        <img src="images/aset2.png" alt="">
-                    </div>
-                </div>
-                <p>
-                    現在内服しているお薬は、血液の凝固や滞りをスムーズにさせる薬を内服しています。
-                    血管や皮膚が傷ついた際かさぶたができにくかったり血管が塞がりにくいそのため、<span class="highlight">アザが出来やすく</span>、出血した際<span
-                        class="highlight">血が止まりにくい</span>です。
-                </p>
-                <div class="heartimage">
-                    <div>
-                        <img src="images/aset3.png" alt="">
-                    </div>
-                    <div>
-                        <img src="images/aset4.png" alt="">
-                    </div>
-                </div>
-            </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">My Disease</a></li>
+            <li><a href="content1.html">Self & Disease</a></li>
+        </ul>
+    </header>
 
+    <main>
+        <div class="contenttittle">
+            <h1>
+                My Disease
+            </h1>
         </div>
-        <div class="menu-container">
-            <div class="menu-sliders"></div>
-            <div class="menu-sliders"></div>
-            <div class="menu-sliders"></div>
+        <div class="mainvisual">
+            <img src="images/aset1.png" alt="My Disease">
         </div>
-
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">川崎病性冠動脈瘤について</a></li>
-                <li><a href="content1.html">自分と病気</a></li>
-            </ul>
+        <div class="subtittle">
+            <p>
+                ABOUT MY DISEASE
+            </p>
         </div>
-        <footer>
-            <div>
-                <p>@GlassBomb</p>
-            </div>
-        </footer>
+        <div class="maintittle">
+            <p>
+                川崎病性<br>冠動脈瘤について
+            </p>
+        </div>
+        <div class="text1">
+            <p>
+                川崎病の影響で、心臓の血管（冠動脈）に炎症が起き、血管の
+                壁が弱くなり、冠動脈瘤ができる。瘤の部分の血管の血液の
+                流れが滞ると血栓（血のかたまり）が発生し急性心筋梗塞を
+                起こす可能性があるため、お薬や定期的な検査で管理しています。
+            </p>
+        </div>
+        <div class="submainatittle">
+            <p>
+                内服薬について
+            </p>
+        </div>
+        <div class="text1">
+            <p>
+                血液の凝固や滞りをスムーズにさせる薬ワーファリンと
+                アスピリンを内服しています。
+            </p>
+        </div>
+        <div class="submainatittle">
+            <p>
+                副作用について
+            </p>
+        </div>
+        <div class="text1">
+            <p>
+                怪我して出血した際かさぶたができにくいため、
+                血が止まりにくく、アザができやすいです。
+            </p>
+        </div>
     </main>
 </body>
 
