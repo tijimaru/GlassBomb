@@ -5,23 +5,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://use.typekit.net/vws2rvn.css">
-    <script>
-        (function (d) {
-            var config = {
-                kitId: 'vws2rvn',
-                scriptTimeout: 3000,
-                async: true
-            },
-                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
-        })(document);
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlassBomb</title>
+    <title>Document</title>
 </head>
 
 <body>
     <header>
+        <div class="maintittle">
+            <h1>GlassBomb</h1>
+        </div>
+
         <button class="menu-btn" id="menuBtn" aria-label="メニューを開く">
             <span></span>
             <span></span>
@@ -29,60 +22,140 @@
         </button>
 
         <ul class="nav-menu" id="navMenu">
-            <li><a href="index.html">My Disease</a></li>
-            <li><a href="content1.html">Self & Disease</a></li>
+            <li>
+                <p>GLASSBOMB</p>
+            </li>
+            <li><a href="index.html">・My Disease</a></li>
+            <li><a href="content1.html">・Self & Disease</a></li>
         </ul>
     </header>
-
     <main>
-        <div class="contenttittle">
-            <h1>
-                My Disease
-            </h1>
+        <div class="section1">
+            <div class="section1-tittle">
+                <p>
+                    川崎病性冠動脈瘤
+                </p>
+            </div>
+            <div class="section1-subtitle">
+                <p>
+                    川崎病の影響で、心臓の血管（冠動脈）に炎症が起き、血管の 壁が弱くなり、冠動脈瘤ができる。瘤の部分の血管の血液の 流れが滞ると血栓（血のかたまり）が発生し急性心筋梗塞を
+                    起こす可能性があるため、お薬や定期的な検査で管理しています。
+                </p>
+            </div>
         </div>
-        <div class="mainvisual">
-            <img src="images/aset1.png" alt="My Disease">
+
+        <div class="section2">
+            <div class="section2-title">
+                <p>
+                    くすりと副作用のバランス
+                </p>
+            </div>
+            <div class="section2-subtitle">
+                <p>
+                    川崎病による冠動脈瘤の治療では、薬の効果と副作用を理解し、上手く付き合っていくことが大切です。
+                </p>
+            </div>
         </div>
-        <div class="subtittle">
-            <p>
-                ABOUT MY DISEASE
-            </p>
+
+        <div class="section3">
+            <div class="grid">
+
+                <section class="card border-card">
+                    <h3 class="card-title">内服薬</h3>
+                    <p class="card-subtitle">血栓を防ぐための薬</p>
+
+                    <div class="item-box">
+                        <span class="item-icon icon-pink">💊</span>
+                        <div class="item-text">
+                            <h4>ワーファリン</h4>
+                            <p>血液を固まりにくくし、血栓ができるのを防ぎます。</p>
+                            <span class="badge">抗凝固薬</span>
+                        </div>
+                    </div>
+
+                    <div class="item-box">
+                        <span class="item-icon icon-white">⚪</span>
+                        <div class="item-text">
+                            <h4>アスピリン</h4>
+                            <p>血小板の働きを抑え、血栓をできにくくします。</p>
+                            <span class="badge">抗血小板薬</span>
+                        </div>
+                    </div>
+
+                    <div class="item-box">
+                        <span class="item-icon icon-green">📅</span>
+                        <div class="item-text">
+                            <h4>毎日欠かさず内服</h4>
+                            <p>決められた時間に飲むことで、効果が安定し血栓のリスクを下げます。</p>
+                        </div>
+                    </div>
+
+                    <div class="info-alert alert-yellow">
+                        <span class="alert-icon">🛡️</span>
+                        <p>血栓のリスクを低く保ち、命を守るために必要な薬です。</p>
+                    </div>
+                </section>
+
+                <div class="center-container">
+                    <div class="arrow-indicator">➔➔➔</div>
+
+                    <div class="circle-display">
+                        <div class="circle-heart-top">❤️‍🔥</div>
+                        <div class="human-icon">👤</div>
+                        <h4>冠動脈瘤とともに生きるわたし</h4>
+                        <p>薬の効果と副作用を正しく理解し、体調の変化に気をつけながら生活しています。</p>
+                    </div>
+
+                    <div class="arrow-indicator">➔➔➔</div>
+                </div>
+
+                <section class="card border-card">
+                    <h3 class="card-title">副作用</h3>
+                    <p class="card-subtitle">薬の影響で起こること</p>
+
+                    <div class="item-box">
+                        <span class="item-icon icon-drop">💧</span>
+                        <div class="item-text">
+                            <h4>出血しやすい</h4>
+                            <p>転んだ時など、出血が止まりにくくなります。</p>
+                        </div>
+                    </div>
+
+                    <div class="item-box">
+                        <span class="item-icon icon-purple">🟣</span>
+                        <div class="item-text">
+                            <h4>あざができやすい</h4>
+                            <p>軽い衝撃でも、あざができやすくなります。</p>
+                        </div>
+                    </div>
+
+                    <div class="item-box">
+                        <span class="item-icon icon-band">🩹</span>
+                        <div class="item-text">
+                            <h4>傷の治りが遅い</h4>
+                            <p>切り傷や鼻血など、治るまでに時間がかかることがあります。</p>
+                        </div>
+                    </div>
+
+                    <div class="info-alert alert-purple">
+                        <span class="alert-icon">⚠️</span>
+                        <p>異常を感じたら、すぐに家族や<strong>医師に相談することが大切です。</strong></p>
+                    </div>
+                </section>
+            </div>
+            <div class="bottom-points">
+                <div class="point-badge">
+                    <span class="lightbulb">💡</span> ポイント
+                </div>
+                <div class="point-text">
+                    <p>薬は血液の流れを速くするのではなく、血栓を防ぐために血液を固まりにくくする役割を持っています。</p>
+                    <p>効果と副作用のバランスを理解することが、安心して生活するための第一歩です。</p>
+                </div>
+            </div>
+
+            <p class="disclaimer">※この情報は一般的な内容です。個別の治療については必ず医師の指示に従ってください。</p>
         </div>
-        <div class="maintittle">
-            <p>
-                川崎病性<br>冠動脈瘤について
-            </p>
-        </div>
-        <div class="text1">
-            <p>
-                川崎病の影響で、心臓の血管（冠動脈）に炎症が起き、血管の
-                壁が弱くなり、冠動脈瘤ができる。瘤の部分の血管の血液の
-                流れが滞ると血栓（血のかたまり）が発生し急性心筋梗塞を
-                起こす可能性があるため、お薬や定期的な検査で管理しています。
-            </p>
-        </div>
-        <div class="submainatittle">
-            <p>
-                内服薬について
-            </p>
-        </div>
-        <div class="text1">
-            <p>
-                血液の凝固や滞りをスムーズにさせる薬ワーファリンと
-                アスピリンを内服しています。
-            </p>
-        </div>
-        <div class="submainatittle">
-            <p>
-                副作用について
-            </p>
-        </div>
-        <div class="text1">
-            <p>
-                怪我して出血した際かさぶたができにくいため、
-                血が止まりにくく、アザができやすいです。
-            </p>
-        </div>
+
     </main>
 </body>
 
