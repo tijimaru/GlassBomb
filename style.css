@@ -10,13 +10,10 @@
 
 body {
     background: radial-gradient(circle at 75% 20%, #f7f1e5 0%, #e8decb 45%, #decfae 100%);
-    color: #4a4a4a;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-    position: relative;
     padding: 40px 24px;
 }
 
@@ -306,12 +303,12 @@ header {
 .nav-menu a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     letter-spacing: 2px;
     transition: color 0.3s;
     font-family: "itc-bradley-hand-std",
         sans-serif;
-    font-weight: 700;
+    font-weight: 200;
     font-style: normal;
 }
 
@@ -323,7 +320,7 @@ header {
 .nav-menu p {
     color: #fff;
     text-decoration: none;
-    font-size: 3.0rem;
+    font-size: 2.5rem;
     font-family: "itc-bradley-hand-std",
         sans-serif;
     font-weight: 700;
@@ -342,15 +339,21 @@ main {
 }
 
 .section1 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
     text-align: center;
     max-width: 850px;
     padding: 50px 0;
 }
 
 .section2 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
     text-align: center;
     max-width: 850px;
-    padding: 0px 0px 20px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .section1-tittle p {
@@ -469,6 +472,11 @@ main {
     flex-shrink: 0;
 }
 
+.item-icon img {
+    width: 25px;
+    height: auto;
+}
+
 .item-text h4 {
     font-size: 15px;
     font-weight: 700;
@@ -502,10 +510,11 @@ main {
     border-radius: 20px;
     padding: 18px;
     display: flex;
-    gap: 14px;
+    gap: 20px;
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.6);
     box-shadow: inset 0 4px 15px rgba(255, 255, 255, 0.2);
+
 }
 
 .info-alert p {
@@ -524,8 +533,10 @@ main {
     color: #4b2e6d;
 }
 
-.alert-icon {
-    font-size: 20px;
+.alert-icon img {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
 }
 
 /* =========================================
@@ -542,7 +553,7 @@ main {
     color: #f6c543;
     font-weight: bold;
     letter-spacing: -2px;
-    font-size: 22px;
+    font-size: 50px;
     opacity: 0.8;
 }
 
@@ -575,9 +586,9 @@ main {
     filter: drop-shadow(0 4px 10px rgba(245, 180, 40, 0.3));
 }
 
-.human-icon {
-    font-size: 55px;
-    color: #333;
+.human-icon img {
+    width: 70px;
+    height: auto;
     margin-bottom: 12px;
 }
 
