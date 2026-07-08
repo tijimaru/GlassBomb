@@ -44,18 +44,6 @@ body::after {
     right: 10%;
 }
 
-/* =========================================
-   2. ヘッダー（すりガラスのモダンバー）
-   ========================================= */
-/*header {
-    z-index: 10;
-    width: 100%;
-    
-    
-    justify-content: space-between;
-   
-    
-}*/
 header {
     display: flex;
     justify-content: space-between;
@@ -72,137 +60,10 @@ header {
     margin-bottom: 40px;
 }
 
-/*header h1 {
-    font-size: 22px;
-    font-weight: 800;
-    color: #1a1a1a;
-    letter-spacing: 0.5px;
-}*/
 
-/* ==========================================
-   3. ハンバーガーボタン (3本線) - 修正版
-   ========================================== */
-/*.menu-btn {
-    width: 30px;
-    height: 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 10000;
-    position: relative;
-}
-
-.menu-btn span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #333;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-
-.menu-btn.active span {
-    background-color: #ffffff !important;
-}
-
-.menu-btn.active span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.menu-btn.active span:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-10px);
-}
-
-.menu-btn.active span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
-
-/* ==========================================
-   4. フルスクリーンメニュー本体（全面ブラックアウト） - 修正版
-   ========================================== */
-/*.nav-menu {
-    position: fixed;
-    top: 0 !important;
-    left: 0 !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background: rgba(10, 10, 10, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    /* ボタン（10000）のすぐ下に配置 */
-
-/* 初期状態は完全に隠す */
-/*opacity: 0;
-    visibility: hidden;
-    transform: scale(1.02);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* メニューが開いた時(active) */
-/*.nav-menu.active {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-/* ★追加：メニューが開いている間、背後のサイトがスクロールするのを防ぐ */
-/*body.menu-open {
-    overflow: hidden !important;
-}
-
-.nav-menu li {
-    margin: 25px 0;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-menu.active li {
-    opacity: 1;
-    transform: translateY(0);
-}*/
-
-/* 各メニューリンクにディレイをかけて心地よいアニメーションに */
-/*.nav-menu.active li:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.nav-menu.active li:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.nav-menu.active li:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-.nav-menu a {
-    color: #fff;
+.maintittle a {
     text-decoration: none;
-    font-size: 2rem;
-    letter-spacing: 3px;
-    font-weight: 700;
-    transition: color 0.3s, transform 0.2s;
-    display: inline-block;
 }
-
-.nav-menu a:hover {
-    color: #f6c543;
-    transform: scale(1.05);
-}*/
-
 
 .maintittle h1 {
     font-size: 22px;
@@ -344,7 +205,7 @@ main {
     margin: 0 auto;
     text-align: center;
     max-width: 850px;
-    padding: 50px 0;
+    padding: 0px 0px 50px 0px;
 }
 
 .section2 {
@@ -654,6 +515,75 @@ main {
     font-size: 12px;
     color: #666;
     margin-bottom: 20px;
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 16px;
+}
+
+/* グレイ面に静かに馴染む極細縦線 */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background-color: #333;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+    padding-bottom: 4px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* タイムライン上のソリッドな白いドット */
+.timeline-dot {
+    position: absolute;
+    left: -23.5px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    /* 黒背景に映えるピュアホワイトの点 */
+    border-radius: 50%;
+    border: 2px solid #333;
+    ;
+    /* 背後の線をマスクするグレイの余白 */
+    z-index: 2;
+}
+
+.timeline-body h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.timeline-body p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.timeline-arrow {
+    display: none;
+}
+
+.content1content2 {
+    border-radius: 32px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.04), inset 0 12px 24px rgba(255, 255, 255, 0.45), inset 0 -6px 12px rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.25);
+    padding: 24px 24px;
+    backdrop-filter: blur(25px) saturate(110%);
+    -webkit-backdrop-filter: blur(25px)
 }
 
 /* =========================================
